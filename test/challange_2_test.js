@@ -13,7 +13,7 @@ describe('PrivateStateVariable', function () {
 
   // Test the setSecretValue() function
   it("should set the secret value", async () => {
-    const newSecretValue = "new secret value";
+    const newSecretValue = 1;
 
     // Set the secret value
     await privateStateVariable.setSecretValue(newSecretValue);
@@ -27,7 +27,7 @@ describe('PrivateStateVariable', function () {
 
   // Test the getSecretValue() function
   it("should get the secret value", async () => {
-    const secretValue = "secret value";
+    const secretValue = 1;
 
     // Set the secret value
     await privateStateVariable.setSecretValue(secretValue);

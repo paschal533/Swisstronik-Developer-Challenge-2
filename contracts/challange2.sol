@@ -8,24 +8,24 @@ import "hardhat/console.sol";
 contract PrivateStateVariable is ReentrancyGuard {
 
     // Private state variable
-    string private secretValue;
+    uint256 private secretValue;
 
     // Events
-    event SecretValueModified ( string secretValue );
+    event SecretValueModified ( uint256 secretValue );
 
     // Constructor
-    constructor(string memory _secretValue) {
-        secretValue = _secretValue;
+    constructor() {
+        secretValue = 1;
     }
 
     /**
      * Function to modify the secret value
      *
      * @dev setSecretValue() modifies the secret value.
-     * @param _secretValue - The new string you want to set the secret value as.
+     * @param _secretValue - The new uint256 you want to set the secret value as.
      * 
      */
-    function setSecretValue(string memory _secretValue) public {
+    function setSecretValue(uint256 _secretValue) public {
         secretValue = _secretValue;
         emit SecretValueModified(_secretValue);
     }
@@ -35,9 +35,9 @@ contract PrivateStateVariable is ReentrancyGuard {
      *
      * @dev getSecretValue() retures the secret value.
      * 
-     * @return string .
+     * @return uint256 .
      */
-    function getSecretValue() public view returns (string memory) {
+    function getSecretValue() public view returns (uint256) {
         return secretValue;
     }
 

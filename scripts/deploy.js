@@ -7,7 +7,7 @@ async function main() {
 
   await contract.waitForDeployment();
 
-  console.log(`Voting System contract deployed to ${contract.getAddress()}`);
+  console.log(`Private State Variable contract deployed to ${ await contract.getAddress()}`);
 }
 
 //DEFAULT BY HARDHAT:
