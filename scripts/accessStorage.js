@@ -12,8 +12,11 @@ const getMumbaiStorage = async (address, slot, block) => {
         throw new Error('Invalid storage value');
     }
 
+    console.log(storage)
+
     // Decode the storage value using the ASCII character encoding.
-    const value = ethers.decodeBytes32String(stringWithNullTerminator);
+    const value = BigInt(storage).toString();
+    console.log(value)
   };
 
 const getSwisstronikStorage = async (address, slot, block) => {
@@ -27,9 +30,13 @@ const getSwisstronikStorage = async (address, slot, block) => {
 
   // Decode the storage value using the ASCII character encoding.
   //const value = await ethers.decodeBytes32String(storage);
-  
-  console.log(storage);
+
+  console.log(storage)
+
+  const value = BigInt(storage).toString();
+  console.log(value)
+
 };
 
-getMumbaiStorage("0x622715FE13309981c6Aef4F1787D1143644c7Ce4", "0", "latest" )
-getSwisstronikStorage("0x299d39013A53e549f9d2e823BFeC8890b11c946b", "0", "latest" )
+getMumbaiStorage("0x5D8248D29F9D36f44Ff81653B8fB4F21B26a4E1c", "0", "latest" )
+getSwisstronikStorage("0x0Ad424f5EbD0bf829DC4E1e995E153B27223b1af", "0", "latest" )
